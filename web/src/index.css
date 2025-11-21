@@ -1,0 +1,77 @@
+:root {
+  --bg: #0f1115;
+  --panel: #151822;
+  --text: #e6e6f0;
+  --muted: #a0a3b1;
+  --brand: #646cff;
+  --danger: #e5484d;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root { height: 100%; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+header { text-align: center; margin-bottom: 16px; }
+
+h1 { margin: 8px 0 4px; font-size: 32px; }
+.subtitle { color: var(--muted); margin: 0 0 16px; }
+.summary { display: flex; gap: 16px; justify-content: center; color: var(--muted); }
+
+main { display: grid; grid-template-columns: 1fr; gap: 16px; }
+
+.card {
+  background: var(--panel);
+  border: 1px solid #222739;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.row { display: grid; gap: 8px; margin-bottom: 12px; }
+label { color: var(--muted); font-size: 14px; }
+
+input, textarea, select, button {
+  background: #0e111a;
+  border: 1px solid #2a2f45;
+  color: var(--text);
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 14px;
+}
+
+button { cursor: pointer; border-color: #3a4060; }
+button:hover { border-color: var(--brand); }
+button.danger { border-color: #6b1d21; color: #ffd6d6; background: #1a0e0f; }
+button.danger:hover { border-color: var(--danger); }
+
+.exercises { display: grid; gap: 8px; }
+.exercise { display: grid; grid-template-columns: 1fr repeat(3, 110px) 100px; gap: 8px; }
+
+.workout-list { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.workout-item { background: #0f1220; border: 1px solid #222739; border-radius: 8px; padding: 12px; }
+.workout-item .meta { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; }
+.workout-item .volume { color: var(--muted); font-size: 14px; }
+.workout-item table { width: 100%; border-collapse: collapse; margin-top: 6px; }
+.workout-item th, .workout-item td { text-align: left; padding: 6px; border-bottom: 1px solid #1e2134; }
+.notes { color: var(--muted); margin-top: 8px; }
+
+.actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 12px; }
+
+footer { text-align: center; color: var(--muted); margin: 16px 0; }
+
+@media (max-width: 720px) {
+  .exercise { grid-template-columns: 1fr 80px 80px 110px 90px; }
+}
